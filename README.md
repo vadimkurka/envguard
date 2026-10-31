@@ -40,10 +40,20 @@ Schema validation and codebase scanning are planned for later versions.
 
 ---
 
-## Install
+## Install from source
+
+The package has not been published to PyPI as part of this repair. Install this repository locally:
 
 ```bash
-pip install envguard
+git clone https://github.com/vadimkurka/envguard.git
+cd envguard
+python -m pip install .
+```
+
+Run regression tests from the repository root:
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ---
@@ -91,7 +101,7 @@ Possible typos
 ```yaml
 - name: Validate environment
   run: |
-    pip install envguard
+    python -m pip install .
     envguard check --env .env.ci --example .env.example
 ```
 

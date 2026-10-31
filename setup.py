@@ -1,3 +1,4 @@
+from pathlib import Path
 from setuptools import setup, find_packages
 
 setup(
@@ -13,7 +14,7 @@ setup(
     python_requires=">=3.8",
     author="Vadim",
     description="Catch missing, mistyped, and empty environment variables before they break your app.",
-    long_description=open("README.md").read(),
+    long_description=Path(__file__).with_name("README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     url="https://github.com/vadimkurka/envguard",
     classifiers=[
